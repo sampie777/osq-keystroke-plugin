@@ -1,5 +1,7 @@
 # OSQ Keystroke Plugin
 
+_Only works on Windows computers_
+
 ### Usage
 
 For sending key stroke commands to another application/window, the following procedure is recommend:
