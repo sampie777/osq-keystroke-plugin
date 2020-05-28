@@ -59,7 +59,7 @@ class WindowFocusQueItem(override val plugin: BasePlugin, override val name: Str
     private fun findWindowHandle(windowTitle: String): HWND? {
         if (!System.getProperty("os.name").toLowerCase().contains("win")) {
             logger.warning("Must run on Windows to find the window")
-            Notifications.add("Plugin must run on Windows operating system", "EasyWorship")
+            Notifications.add("Plugin must run on Windows operating system", "KeyStroke")
             return null
         }
 

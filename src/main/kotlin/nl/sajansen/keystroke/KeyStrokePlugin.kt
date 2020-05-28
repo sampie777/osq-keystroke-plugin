@@ -10,7 +10,7 @@ import javax.swing.JComponent
 
 class KeyStrokePlugin : QueItemBasePlugin {
     override val name: String = "KeyStrokePlugin"
-    override val description: String = "Plugin to create que items which will execute key strokes"
+    override val description: String = "Plugin to create queue items which will execute key strokes"
     override val version: String = PluginInfo.version
     override val icon: Icon? = null
 
@@ -28,7 +28,7 @@ class KeyStrokePlugin : QueItemBasePlugin {
         return when (jsonQueItem.className) {
             WindowFocusQueItem::class.java.simpleName -> WindowFocusQueItem(this, jsonQueItem.name)
             KeyStrokeQueItem::class.java.simpleName -> KeyStrokeQueItem.fromJson(this, jsonQueItem)
-            else -> throw IllegalArgumentException("Invalid $name que item: ${jsonQueItem.className}")
+            else -> throw IllegalArgumentException("Invalid $name queue item: ${jsonQueItem.className}")
         }
     }
 }
