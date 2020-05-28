@@ -6,7 +6,7 @@
 
     <groupId>nl.sajansen</groupId>
     <artifactId>osq-keystroke-plugin</artifactId>
-    <version>0.0.0-SNAPSHOT</version>
+    <version>0.0.0</version>
     <packaging>jar</packaging>
 
     <name>OBS KeyStroke Plugin</name>
