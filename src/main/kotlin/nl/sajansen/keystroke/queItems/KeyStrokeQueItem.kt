@@ -3,14 +3,14 @@ package nl.sajansen.keystroke.queItems
 import nl.sajansen.keystroke.KeyStrokePlugin
 import objects.notifications.Notifications
 import objects.que.JsonQue
-import plugins.common.BasePlugin
-import plugins.common.QueItem
+import objects.que.QueItem
+import java.awt.Color
 import java.awt.Robot
 import java.awt.event.KeyEvent
 import java.util.logging.Logger
 import javax.swing.JComponent
 
-class KeyStrokeQueItem(override val plugin: BasePlugin, val keyEvent: KeyEvent) : QueItem {
+class KeyStrokeQueItem(override val plugin: KeyStrokePlugin, val keyEvent: KeyEvent) : QueItem {
 
     private val logger = Logger.getLogger(KeyStrokeQueItem::class.java.name)
 
@@ -40,6 +40,7 @@ class KeyStrokeQueItem(override val plugin: BasePlugin, val keyEvent: KeyEvent) 
 
     override val name: String = keyEventToString(keyEvent)
     override var executeAfterPrevious = false
+    override var quickAccessColor: Color? = plugin.quickAccessColor
 
     override fun renderText(): String = "Key: $name"
 

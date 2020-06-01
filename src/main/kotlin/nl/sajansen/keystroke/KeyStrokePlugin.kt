@@ -3,8 +3,9 @@ package nl.sajansen.keystroke
 import nl.sajansen.keystroke.queItems.KeyStrokeQueItem
 import nl.sajansen.keystroke.queItems.WindowFocusQueItem
 import objects.que.JsonQue
-import plugins.common.QueItem
+import objects.que.QueItem
 import plugins.common.QueItemBasePlugin
+import java.awt.Color
 import javax.swing.Icon
 import javax.swing.JComponent
 
@@ -15,6 +16,7 @@ class KeyStrokePlugin : QueItemBasePlugin {
     override val icon: Icon? = null
 
     override val tabName: String = "KeyStroke"
+    internal val quickAccessColor = Color(255, 252, 229)
 
     override fun sourcePanel(): JComponent {
         return SourcePanel(this)

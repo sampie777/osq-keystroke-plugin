@@ -28,6 +28,7 @@ class KeyStrokeQueItemTest {
             "",
             "Ctrl+V",
             false,
+            null,
             hashMapOf(
                 "id" to "1",
                 "when" to "2",

@@ -5,9 +5,10 @@ import com.sun.jna.Pointer
 import com.sun.jna.platform.win32.User32
 import com.sun.jna.platform.win32.WinDef.HWND
 import com.sun.jna.platform.win32.WinUser.WNDENUMPROC
+import nl.sajansen.keystroke.KeyStrokePlugin
 import objects.notifications.Notifications
-import plugins.common.BasePlugin
-import plugins.common.QueItem
+import objects.que.QueItem
+import java.awt.Color
 import java.util.logging.Logger
 
 
@@ -34,11 +35,12 @@ class WindowFinder(private val windowTitle: String) : WNDENUMPROC {
     }
 }
 
-class WindowFocusQueItem(override val plugin: BasePlugin, override val name: String) : QueItem {
+class WindowFocusQueItem(override val plugin: KeyStrokePlugin, override val name: String) : QueItem {
 
     private val logger = Logger.getLogger(WindowFocusQueItem::class.java.name)
 
     override var executeAfterPrevious: Boolean = false
+    override var quickAccessColor: Color? = plugin.quickAccessColor
 
     override fun activate() {
         val windowHandle = findWindowHandle(name) ?: return
