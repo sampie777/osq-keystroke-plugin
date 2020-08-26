@@ -2,7 +2,7 @@ package nl.sajansen.keystroke
 
 import nl.sajansen.keystroke.queItems.KeyStrokeQueItem
 import nl.sajansen.keystroke.queItems.WindowFocusQueItem
-import objects.que.JsonQue
+import objects.que.JsonQueue
 import objects.que.QueItem
 import plugins.common.QueItemBasePlugin
 import java.awt.Color
@@ -26,7 +26,7 @@ class KeyStrokePlugin : QueItemBasePlugin {
         throw NotImplementedError("This method is deprecated")
     }
 
-    override fun jsonToQueItem(jsonQueItem: JsonQue.QueItem): QueItem {
+    override fun jsonToQueItem(jsonQueItem: JsonQueue.QueueItem): QueItem {
         return when (jsonQueItem.className) {
             WindowFocusQueItem::class.java.simpleName -> WindowFocusQueItem(this, jsonQueItem.name)
             KeyStrokeQueItem::class.java.simpleName -> KeyStrokeQueItem.fromJson(this, jsonQueItem)

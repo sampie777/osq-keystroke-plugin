@@ -1,7 +1,7 @@
 package nl.sajansen.keystroke
 
 import nl.sajansen.keystroke.queItems.KeyStrokeQueItem
-import objects.que.JsonQue
+import objects.que.JsonQueue
 import java.awt.event.KeyEvent
 import javax.swing.JLabel
 import kotlin.test.Test
@@ -23,7 +23,7 @@ class KeyStrokeQueItemTest {
 
     @Test
     fun testFromJson() {
-        val jsonQueItem = JsonQue.QueItem(
+        val jsonQueItem = JsonQueue.QueueItem(
             "",
             "",
             "Ctrl+V",

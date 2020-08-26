@@ -2,7 +2,7 @@ package nl.sajansen.keystroke.queItems
 
 import nl.sajansen.keystroke.KeyStrokePlugin
 import objects.notifications.Notifications
-import objects.que.JsonQue
+import objects.que.JsonQueue
 import objects.que.QueItem
 import java.awt.Color
 import java.awt.Robot
@@ -24,7 +24,7 @@ class KeyStrokeQueItem(override val plugin: KeyStrokePlugin, val keyEvent: KeyEv
                 .joinToString("+")
         }
 
-        fun fromJson(plugin: KeyStrokePlugin, jsonQueItem: JsonQue.QueItem): KeyStrokeQueItem {
+        fun fromJson(plugin: KeyStrokePlugin, jsonQueItem: JsonQueue.QueueItem): KeyStrokeQueItem {
             val keyEvent = KeyEvent(
                 object : JComponent(){},
                 jsonQueItem.data["id"]!!.toInt(),
@@ -83,7 +83,7 @@ class KeyStrokeQueItem(override val plugin: KeyStrokePlugin, val keyEvent: KeyEv
         throw NotImplementedError("This method is deprecated")
     }
 
-    override fun toJson(): JsonQue.QueItem {
+    override fun toJson(): JsonQueue.QueueItem {
         val jsonItem = super.toJson()
         jsonItem.data["id"] = keyEvent.id.toString()
         jsonItem.data["when"] = keyEvent.`when`.toString()
